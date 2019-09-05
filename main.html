@@ -1,0 +1,11 @@
+<h2>This is the main frame</h2>
+  
+<iframe id="frame" src="child1.html"></iframe>
+  
+<script>
+var mainPage = "https://localhost/_test/main.html";
+var receiveMessage = function(e) {
+	history.pushState({}, "", mainPage+e.data);
+};
+window.addEventListener("message", receiveMessage, false);
+</script>
